@@ -1673,16 +1673,21 @@ local Library do
                 BackgroundColor3 = FromRGB(14, 14, 14)
             })  Items["MainFrame"]:AddToTheme({BackgroundColor3 = "Background"})
 
-            Items["MainFrame"]:MakeDraggable()
+            -- Items["MainFrame"]:MakeDraggable() -- Disabled as per request, use the HomeBar below
             Items["MainFrame"]:MakeResizeable(Vector2New(Window.Size.X.Offset, Window.Size.Y.Offset), Vector2New(9999, 9999))
 
             -- iOS style home bar for dragging
             Items["HomeBar"] = Instances:Create("Frame", {
                 Parent = Items["MainFrame"].Instance,
-                Size = UDim2New(0, 100, 0, 5),
-                Position = UDim2New(0.5, 0, 1, -10),
-                AnchorPoint = Vector2New(0.5, 0),
+                Size = UDim2New(0, 140, 0, 6),
+                Position = UDim2New(0.5, 0, 1, 15), -- Moved BELOW the UI
+                AnchorPoint = Vector2New(0.5, 0.5),
                 BackgroundColor3 = FromRGB(255, 255, 255),
+                BackgroundTransparency = 0.8,
+                ZIndex = 5,
+                BorderSizePixel = 0,
+                Name = "HomeBar"
+            })
                 BackgroundTransparency = 0.8,
                 ZIndex = 5,
                 BorderSizePixel = 0,
@@ -2007,12 +2012,11 @@ local Library do
             if Url then
                 local FileName = "EpsteinWare/Assets/" .. (tonumber(Asset) and "Music.mp3" or tostring(Asset))
                 
-                -- Delete the file if it's too small (likely a failed HTML download)
-                if isfile(FileName) and listfiles then
-                    -- Some executors don't support getting file size easily, 
-                    -- so we'll just check if the content starts with "<!DOCTYPE" or "{" (JSON/HTML)
+                -- Check if file is valid
+                if isfile(FileName) then
                     local content = readfile(FileName)
-                    if content:sub(1, 10):find("<") or content:sub(1, 10):find("{") then
+                    -- If it's HTML, JSON or empty, it's a failed download
+                    if #content < 1000 or content:sub(1, 10):find("<") or content:sub(1, 10):find("{") then
                         delfile(FileName)
                     end
                 end
@@ -2020,7 +2024,14 @@ local Library do
                 if not isfile(FileName) then
                     writefile(FileName, game:HttpGet(Url))
                 end
-                Sound.SoundId = getcustomasset(FileName)
+                
+                -- Try to load it
+                local Success, Result = pcall(function() return getcustomasset(FileName) end)
+                if Success then
+                    Sound.SoundId = Result
+                else
+                    warn("EpsteinWare: Failed to load local music asset: " .. tostring(Result))
+                end
             elseif tonumber(Asset) then
                 Sound.SoundId = "rbxassetid://" .. tostring(Asset)
             elseif isfile(tostring(Asset)) then
