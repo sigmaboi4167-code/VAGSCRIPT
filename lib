@@ -16,7 +16,7 @@ end
 
 local Library do
     local UserInputService = game:GetService("UserInputService")
-    local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+    local IsMobile = UserInputService.TouchEnabled
     local Players = game:GetService("Players")
     local Workspace = game:GetService("Workspace")
     local HttpService = game:GetService("HttpService")
@@ -1670,7 +1670,8 @@ local Library do
                 Visible = false,
                 ZIndex = 2,
                 BorderSizePixel = 0,
-                BackgroundColor3 = FromRGB(14, 14, 14)
+                BackgroundColor3 = FromRGB(14, 14, 14),
+                BackgroundTransparency = Window.Background ~= nil and 1 or 0
             })  Items["MainFrame"]:AddToTheme({BackgroundColor3 = "Background"})
 
             -- Items["MainFrame"]:MakeDraggable() -- Disabled as per request, use the HomeBar below
@@ -2019,6 +2020,19 @@ local Library do
             Library:Connect(ToggleButton.Instance.MouseButton1Click, function()
                 Window:SetOpen(not Window.IsOpen)
             end)
+
+            -- Add a "Close" text to the toggle for clarity
+            Instances:Create("TextLabel", {
+                Parent = ToggleButton.Instance,
+                Size = UDim2New(1, 0, 0, 20),
+                Position = UDim2New(0, 0, 1, 5),
+                BackgroundTransparency = 1,
+                Text = "Toggle UI",
+                TextColor3 = FromRGB(255, 255, 255),
+                TextStrokeTransparency = 0,
+                TextSize = 12,
+                FontFace = Library.Font
+            })
         end
 
         function Window:PlayMusic(Asset, Url)
