@@ -2036,18 +2036,19 @@ local Library do
             end
             
             Sound.Volume = 1
-            Sound.Looped = true
+            Sound.Looped = false -- Disabled looping as per request
             Sound:Play()
             return Sound
         end
 
         function Window:PlayVideo(Asset, Url)
             local VideoFrame = Instance.new("VideoFrame")
-            VideoFrame.Parent = Items["MainFrame"].Instance
+            VideoFrame.Parent = Items["Inline"].Instance -- Moved to background where group boxes are
             VideoFrame.Size = UDim2.new(1, 0, 1, 0)
             VideoFrame.BackgroundTransparency = 1
-            VideoFrame.ZIndex = 1 -- Behind other elements
+            VideoFrame.ZIndex = -1 -- Behind all elements
             VideoFrame.Looped = true
+            VideoFrame.Volume = 0 -- It's a GIF, keep it silent
             
             if Url then
                 local FileName = "EpsteinWare/Assets/" .. (tonumber(Asset) and "Video.mp4" or tostring(Asset))
