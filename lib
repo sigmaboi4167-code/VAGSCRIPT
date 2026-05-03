@@ -1884,27 +1884,6 @@ local Library do
                 BorderSizePixel = 0,
                 BackgroundColor3 = FromRGB(255, 255, 255)
             }) 
-
-            -- Global Background Image
-            Items["Background"] = Instances:Create("ImageLabel", {
-                Parent = Items["MainFrame"].Instance,
-                Size = UDim2New(1, 0, 1, 0),
-                Name = "Background",
-                Position = UDim2New(0, 0, 0, 0),
-                BorderColor3 = FromRGB(0, 0, 0),
-                ZIndex = 1,
-                BorderSizePixel = 0,
-                BackgroundColor3 = FromRGB(14, 14, 14),
-                Image = (tonumber(Window.Background) and "rbxassetid://" .. Window.Background) or (type(Window.Background) == "string" and isfile(Window.Background) and getcustomasset(Window.Background)) or Window.Background or "",
-                ImageTransparency = 0.5,
-                ScaleType = Enum.ScaleType.Stretch,
-                Visible = Window.Background ~= nil
-            }) Items["Background"]:AddToTheme({BackgroundColor3 = "Background"})
-            
-            Instances:Create("UICorner", {
-                Parent = Items["Background"].Instance,
-                CornerRadius = UDimNew(0, 3)
-            })
         end
 
         local Debounce = false 
@@ -2155,7 +2134,7 @@ local Library do
                 FillDirection = Enum.FillDirection.Horizontal
             }) 
 
-            Items["Columns"] = Instances:Create("Frame", {
+            Items["Columns"] = Instances:Create("ImageLabel", {
                 Parent = Items["PageContent"].Instance,
                 Size = UDim2New(1, 0, 1, -55),
                 Name = "\0",
@@ -2164,7 +2143,9 @@ local Library do
                 ZIndex = 2,
                 BorderSizePixel = 0,
                 BackgroundColor3 = FromRGB(11, 11, 11),
-                BackgroundTransparency = Page.Window.Background and 1 or 0
+                Image = (tonumber(self.Background) and "rbxassetid://" .. self.Background) or (type(self.Background) == "string" and isfile(self.Background) and getcustomasset(self.Background)) or self.Background or "",
+                ImageTransparency = 0.5,
+                ScaleType = Enum.ScaleType.Stretch
             })  Items["Columns"]:AddToTheme({BackgroundColor3 = "Inline"})
 
             Instances:Create("Frame", {
