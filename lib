@@ -1688,11 +1688,6 @@ local Library do
                 BorderSizePixel = 0,
                 Name = "HomeBar"
             })
-                BackgroundTransparency = 0.8,
-                ZIndex = 5,
-                BorderSizePixel = 0,
-                Name = "HomeBar"
-            })
             
             Instances:Create("UICorner", {
                 CornerRadius = UDimNew(1, 0),
