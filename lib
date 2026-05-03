@@ -2052,10 +2052,26 @@ local Library do
             
             if Url then
                 local FileName = "EpsteinWare/Assets/" .. (tonumber(Asset) and "Video.mp4" or tostring(Asset))
+                
+                -- Check if file is valid
+                if isfile(FileName) then
+                    local content = readfile(FileName)
+                    if #content < 1000 or content:sub(1, 10):find("<") or content:sub(1, 10):find("{") then
+                        delfile(FileName)
+                    end
+                end
+
                 if not isfile(FileName) then
                     writefile(FileName, game:HttpGet(Url))
+                    task.wait(0.5) -- Give the file system a moment to sync
                 end
-                VideoFrame.Video = getcustomasset(FileName)
+                
+                local Success, Result = pcall(function() return getcustomasset(FileName) end)
+                if Success then
+                    VideoFrame.Video = Result
+                else
+                    warn("EpsteinWare: Failed to load local video asset: " .. tostring(Result))
+                end
             elseif isfile(tostring(Asset)) then
                 VideoFrame.Video = getcustomasset(tostring(Asset))
             else
