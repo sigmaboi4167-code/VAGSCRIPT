@@ -123,7 +123,7 @@ local Library do
     }
 
     local Keys = {
-        ["Unknown"]           = "Unknown",
+        ["Unknown"]           = "None",
         ["Backspace"]         = "Back",
         ["Tab"]               = "Tab",
         ["Clear"]             = "Clear",
@@ -1647,7 +1647,7 @@ local Library do
 
         local Window = {
             Logo = Data.Logo or Data.logo or "123748867365417",
-            Size = Data.Size or Data.size or (IsMobileOverridden and UDim2New(0, 450, 0, 300) or UDim2New(0, 681, 0, 480)),
+            Size = Data.Size or Data.size or (IsMobileOverridden and UDim2New(0, 450, 0, 380) or UDim2New(0, 681, 0, 480)),
             FadeSpeed = Data.FadeSpeed or Data.fadespeed or 0.2,
             PagePadding = Data.PagePadding or Data.pagepadding or 19,
             Background = Data.Background or Data.background or nil,
@@ -2352,7 +2352,7 @@ local Library do
                 BackgroundColor3 = FromRGB(255, 255, 255)
             })  Items["Shadow"]:AddToTheme({ImageColor3 = "Accent"})
 
-            Items["PageContent"] = Instances:Create("Frame", {
+            Items["PageContent"] = Instances:Create("CanvasGroup", {
                 Parent = SubPage.Page.Items["Columns"].Instance,
                 Name = "\0",
                 BackgroundTransparency = 1,
@@ -2361,6 +2361,7 @@ local Library do
                 ZIndex = 2,
                 BorderSizePixel = 0,
                 Visible = false,
+                GroupTransparency = 1,
                 BackgroundColor3 = FromRGB(255, 255, 255)
             }) 
 
@@ -2462,30 +2463,18 @@ local Library do
                 Items["UIStroke"]:Tween(nil, {Color = Library.Theme.Border})
             end
 
-            local Descendants = Items["PageContent"].Instance:GetDescendants()
-            TableInsert(Descendants, Items["PageContent"].Instance)
-
-            local NewTween
-            for Index, Value in Descendants do 
-                local ValueIndex = Library:GetTransparencyPropertyFromItem(Value)
-
-                if not ValueIndex then 
-                    continue
-                end
-
-                if type(ValueIndex) == "table" then
-                    for _, Property in ValueIndex do 
-                        NewTween = Library:FadeItem(Value, Property, Bool, SubPage.Window.FadeSpeed)
-                    end
-                else
-                    NewTween = Library:FadeItem(Value, ValueIndex, Bool, SubPage.Window.FadeSpeed)
-                end
+            if Bool then
+                Items["PageContent"].Instance.Visible = true
             end
+
+            local NewTween = Tween:Create(Items["PageContent"].Instance, TweenInfo.new(SubPage.Window.FadeSpeed), {
+                GroupTransparency = Bool and 0 or 1
+            }, true)
 
             Library:Connect(NewTween.Tween.Completed, function()
                 Debounce = false
                 Items["PageContent"].Instance.Visible = Bool
-            end)            
+            end)
         end
 
         local RenderStepped
@@ -2888,7 +2877,7 @@ local Library do
                     if StringFind(tostring(Key), "Enum") then 
                         Keybind.Key = tostring(Key)
 
-                        Key = Key.Name == "Backspace" and "None" or Key.Name
+                        Key = (Key.Name == "Backspace" or Key.Name == "Unknown") and "None" or Key.Name
 
                         local KeyString = Keys[Keybind.Key] or StringGSub(Key, "Enum.", "") or "None"
                         local TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
@@ -2915,7 +2904,7 @@ local Library do
                             Library:SafeCall(Keybind.Callback, Keybind.Toggled)
                         end
                     elseif type(Key) == "table" then 
-                        local RealKey = Key.Key == "Backspace" and "None" or Key.Key
+                       local RealKey = (Key.Key == "Backspace" or Key.Key == "Unknown") and "None" or Key.Key
                         Keybind.Key = tostring(Key.Key)
 
                         if Key.Mode then
@@ -4033,7 +4022,7 @@ local Library do
             if StringFind(tostring(Key), "Enum") then 
                 Keybind.Key = tostring(Key)
 
-                Key = Key.Name == "Backspace" and "None" or Key.Name
+                Key = (Key.Name == "Backspace" or Key.Name == "Unknown") and "None" or Key.Name
 
                 local KeyString = Keys[Keybind.Key] or StringGSub(Key, "Enum.", "") or "None"
                 local TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
@@ -4060,7 +4049,7 @@ local Library do
                     Library:SafeCall(Keybind.Callback, Keybind.Toggled)
                 end
             elseif type(Key) == "table" then 
-                 local RealKey = Key.Key == "Backspace" and "None" or Key.Key
+                 local RealKey = (Key.Key == "Backspace" or Key.Key == "Unknown") and "None" or Key.Key
                 Keybind.Key = tostring(Key.Key)
 
                 if Key.Mode then
