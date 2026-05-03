@@ -2041,9 +2041,6 @@ local Library do
             return Sound
         end
 
-        end
-
-
         Window.Items = Items
 
         Window:SetOpen(true)
