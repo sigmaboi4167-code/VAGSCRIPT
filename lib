@@ -16,6 +16,7 @@ end
 
 local Library do
     local UserInputService = game:GetService("UserInputService")
+    local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
     local Players = game:GetService("Players")
     local Workspace = game:GetService("Workspace")
     local HttpService = game:GetService("HttpService")
@@ -1644,7 +1645,7 @@ local Library do
 
         local Window = {
             Logo = Data.Logo or Data.logo or "123748867365417",
-            Size = Data.Size or Data.size or UDim2New(0, 681, 0, 480),
+            Size = Data.Size or Data.size or (IsMobile and UDim2New(0, 450, 0, 300) or UDim2New(0, 681, 0, 480)),
             FadeSpeed = Data.FadeSpeed or Data.fadespeed or 0.2,
             PagePadding = Data.PagePadding or Data.pagepadding or 19,
             Background = Data.Background or Data.background or nil,
@@ -1872,6 +1873,64 @@ local Library do
                 Window:SetOpen(not Window.IsOpen)
             end
         end)
+
+        if IsMobile then
+            local ScreenGui = Instances:Create("ScreenGui", {
+                Name = "EpsteinWareMobileToggle",
+                Parent = gethui()
+            })
+            
+            local ToggleButton = Instances:Create("ImageButton", {
+                Parent = ScreenGui.Instance,
+                Size = UDim2New(0, 50, 0, 50),
+                Position = UDim2New(0.5, -25, 0, 10),
+                BackgroundColor3 = FromRGB(15, 15, 15),
+                Image = (tonumber(Window.Logo) and "rbxassetid://" .. Window.Logo) or ((type(Window.Logo) == "string" and isfile(Window.Logo)) and getcustomasset(Window.Logo)) or Window.Logo or ""
+            })
+            
+            Instances:Create("UICorner", {
+                CornerRadius = UDimNew(0.2, 0),
+                Parent = ToggleButton.Instance
+            })
+            
+            Instances:Create("UIStroke", {
+                Color = FromRGB(200, 0, 0),
+                Thickness = 2,
+                Parent = ToggleButton.Instance
+            })
+            
+            local dragging, dragInput, dragStart, startPos
+            Library:Connect(ToggleButton.Instance.InputBegan, function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                    dragging = true
+                    dragStart = input.Position
+                    startPos = ToggleButton.Instance.Position
+                    
+                    input.Changed:Connect(function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end)
+                end
+            end)
+            
+            Library:Connect(ToggleButton.Instance.InputChanged, function(input)
+                if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                    dragInput = input
+                end
+            end)
+            
+            Library:Connect(UserInputService.InputChanged, function(input)
+                if input == dragInput and dragging then
+                    local delta = input.Position - dragStart
+                    ToggleButton.Instance.Position = UDim2New(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+                end
+            end)
+            
+            Library:Connect(ToggleButton.Instance.MouseButton1Click, function()
+                Window:SetOpen(not Window.IsOpen)
+            end)
+        end
 
         Window.Items = Items
 
