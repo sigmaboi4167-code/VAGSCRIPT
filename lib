@@ -1663,9 +1663,9 @@ local Library do
             Items["MainFrame"] = Instances:Create("Frame", {
                 Parent = Library.Holder.Instance,
                 BorderColor3 = FromRGB(0, 0, 0),
-                AnchorPoint = Vector2New(0, 0),
+                AnchorPoint = Vector2New(0.5, 0.5),
                 Name = "\0",
-                Position = UDim2New(0, Camera.ViewportSize.X / 3.5, 0, Camera.ViewportSize.Y / 3.5),
+                Position = UDim2New(0.5, 0, 0.5, 0),
                 Size = Window.Size,
                 Visible = false,
                 ZIndex = 2,
