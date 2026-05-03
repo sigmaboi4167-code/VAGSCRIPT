@@ -1642,10 +1642,12 @@ local Library do
 
     Library.Window = function(self, Data)
         Data = Data or { }
+        
+        local IsMobileOverridden = Data.MobileMode or IsMobile
 
         local Window = {
             Logo = Data.Logo or Data.logo or "123748867365417",
-            Size = Data.Size or Data.size or (IsMobile and UDim2New(0, 450, 0, 300) or UDim2New(0, 681, 0, 480)),
+            Size = Data.Size or Data.size or (IsMobileOverridden and UDim2New(0, 380, 0, 240) or UDim2New(0, 681, 0, 480)),
             FadeSpeed = Data.FadeSpeed or Data.fadespeed or 0.2,
             PagePadding = Data.PagePadding or Data.pagepadding or 19,
             Background = Data.Background or Data.background or nil,
@@ -1874,7 +1876,7 @@ local Library do
             end
         end)
 
-        if IsMobile then
+        if IsMobileOverridden then
             local ScreenGui = Instances:Create("ScreenGui", {
                 Name = "EpsteinWareMobileToggle",
                 Parent = gethui()
@@ -1972,7 +1974,7 @@ local Library do
                 BorderColor3 = FromRGB(0, 0, 0),
                 AutoButtonColor = false,
                 Name = "\0",
-                Image = (#tostring(Page.Icon) > 11 and "rbxthumb://type=Asset&w=150&h=150&id=" .. Page.Icon or "rbxassetid://" .. Page.Icon),
+                Image = "rbxthumb://type=Asset&w=150&h=150&id=" .. Page.Icon,
                 BackgroundTransparency = 1,
                 Size = UDim2New(0, 25, 0, 25),
                 ZIndex = 2,
