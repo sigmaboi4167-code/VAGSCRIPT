@@ -2046,6 +2046,30 @@ local Library do
             return Sound
         end
 
+        function Window:PlayVideo(Asset, Url)
+            local VideoFrame = Instance.new("VideoFrame")
+            VideoFrame.Parent = Items["MainFrame"].Instance
+            VideoFrame.Size = UDim2.new(1, 0, 1, 0)
+            VideoFrame.BackgroundTransparency = 1
+            VideoFrame.ZIndex = 1 -- Behind other elements
+            VideoFrame.Looped = true
+            
+            if Url then
+                local FileName = "EpsteinWare/Assets/" .. (tonumber(Asset) and "Video.mp4" or tostring(Asset))
+                if not isfile(FileName) then
+                    writefile(FileName, game:HttpGet(Url))
+                end
+                VideoFrame.Video = getcustomasset(FileName)
+            elseif isfile(tostring(Asset)) then
+                VideoFrame.Video = getcustomasset(tostring(Asset))
+            else
+                VideoFrame.Video = tostring(Asset)
+            end
+            
+            VideoFrame:Play()
+            return VideoFrame
+        end
+
         Window.Items = Items
 
         Window:SetOpen(true)
