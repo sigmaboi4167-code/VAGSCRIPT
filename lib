@@ -1676,6 +1676,66 @@ local Library do
             Items["MainFrame"]:MakeDraggable()
             Items["MainFrame"]:MakeResizeable(Vector2New(Window.Size.X.Offset, Window.Size.Y.Offset), Vector2New(9999, 9999))
 
+            -- iOS style home bar for dragging
+            Items["HomeBar"] = Instances:Create("Frame", {
+                Parent = Items["MainFrame"].Instance,
+                Size = UDim2New(0, 100, 0, 5),
+                Position = UDim2New(0.5, 0, 1, -10),
+                AnchorPoint = Vector2New(0.5, 0),
+                BackgroundColor3 = FromRGB(255, 255, 255),
+                BackgroundTransparency = 0.8,
+                ZIndex = 5,
+                BorderSizePixel = 0,
+                Name = "HomeBar"
+            })
+            
+            Instances:Create("UICorner", {
+                CornerRadius = UDimNew(1, 0),
+                Parent = Items["HomeBar"].Instance
+            })
+
+            -- Dragging functionality for the home bar
+            local draggingBar, dragInputBar, dragStartBar, startPosBar
+            Library:Connect(Items["HomeBar"].Instance.InputBegan, function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                    draggingBar = true
+                    dragStartBar = input.Position
+                    startPosBar = Items["MainFrame"].Instance.Position
+                    
+                    TweenService:Create(Items["HomeBar"].Instance, TweenInfo.new(0.2), {BackgroundTransparency = 0}):Play()
+
+                    input.Changed:Connect(function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            draggingBar = false
+                            TweenService:Create(Items["HomeBar"].Instance, TweenInfo.new(0.2), {BackgroundTransparency = 0.8}):Play()
+                        end
+                    end)
+                end
+            end)
+
+            Library:Connect(Items["HomeBar"].Instance.InputChanged, function(input)
+                if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                    dragInputBar = input
+                end
+            end)
+
+            Library:Connect(UserInputService.InputChanged, function(input)
+                if input == dragInputBar and draggingBar then
+                    local delta = input.Position - dragStartBar
+                    Items["MainFrame"].Instance.Position = UDim2New(startPosBar.X.Scale, startPosBar.X.Offset + delta.X, startPosBar.Y.Scale, startPosBar.Y.Offset + delta.Y)
+                end
+            end)
+
+            -- Hover effect for home bar
+            Library:Connect(Items["HomeBar"].Instance.MouseEnter, function()
+                TweenService:Create(Items["HomeBar"].Instance, TweenInfo.new(0.2), {BackgroundTransparency = 0.4}):Play()
+            end)
+            Library:Connect(Items["HomeBar"].Instance.MouseLeave, function()
+                if not draggingBar then
+                    TweenService:Create(Items["HomeBar"].Instance, TweenInfo.new(0.2), {BackgroundTransparency = 0.8}):Play()
+                end
+            end)
+
             Items["Shadow"] = Instances:Create("ImageLabel", {
                 Parent = Items["MainFrame"].Instance,
                 ImageColor3 = FromRGB(0, 0, 0),
@@ -1879,19 +1939,20 @@ local Library do
         if IsMobileOverridden then
             local ScreenGui = Instances:Create("ScreenGui", {
                 Name = "EpsteinWareMobileToggle",
-                Parent = gethui()
+                Parent = (gethui and gethui()) or game:GetService("CoreGui") or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
             })
             
             local ToggleButton = Instances:Create("ImageButton", {
                 Parent = ScreenGui.Instance,
-                Size = UDim2New(0, 50, 0, 50),
-                Position = UDim2New(0.5, -25, 0, 10),
+                Size = UDim2New(0, 60, 0, 60),
+                Position = UDim2New(0.1, 0, 0.5, 0),
                 BackgroundColor3 = FromRGB(15, 15, 15),
-                Image = (tonumber(Window.Logo) and "rbxassetid://" .. Window.Logo) or ((type(Window.Logo) == "string" and isfile(Window.Logo)) and getcustomasset(Window.Logo)) or Window.Logo or ""
+                Image = (tonumber(Window.Logo) and "rbxassetid://" .. Window.Logo) or ((type(Window.Logo) == "string" and isfile(Window.Logo)) and getcustomasset(Window.Logo)) or Window.Logo or "",
+                ZIndex = 100
             })
             
             Instances:Create("UICorner", {
-                CornerRadius = UDimNew(0.2, 0),
+                CornerRadius = UDimNew(0.5, 0),
                 Parent = ToggleButton.Instance
             })
             
@@ -1902,6 +1963,12 @@ local Library do
             })
             
             local dragging, dragInput, dragStart, startPos
+            
+            local function update(input)
+                local delta = input.Position - dragStart
+                ToggleButton.Instance.Position = UDim2New(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+            end
+            
             Library:Connect(ToggleButton.Instance.InputBegan, function(input)
                 if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     dragging = true
@@ -1924,14 +1991,37 @@ local Library do
             
             Library:Connect(UserInputService.InputChanged, function(input)
                 if input == dragInput and dragging then
-                    local delta = input.Position - dragStart
-                    ToggleButton.Instance.Position = UDim2New(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+                    update(input)
                 end
             end)
             
             Library:Connect(ToggleButton.Instance.MouseButton1Click, function()
                 Window:SetOpen(not Window.IsOpen)
             end)
+        end
+
+        function Window:PlayMusic(Asset, Url)
+            local Sound = Instance.new("Sound")
+            Sound.Parent = game:GetService("SoundService")
+            
+            if Url then
+                local FileName = "EpsteinWare/Assets/" .. (tonumber(Asset) and "Music.mp3" or tostring(Asset))
+                if not isfile(FileName) then
+                    writefile(FileName, game:HttpGet(Url))
+                end
+                Sound.SoundId = getcustomasset(FileName)
+            elseif tonumber(Asset) then
+                Sound.SoundId = "rbxassetid://" .. tostring(Asset)
+            elseif isfile(tostring(Asset)) then
+                Sound.SoundId = getcustomasset(tostring(Asset))
+            else
+                Sound.SoundId = tostring(Asset)
+            end
+            
+            Sound.Volume = 1
+            Sound.Looped = true
+            Sound:Play()
+            return Sound
         end
 
         Window.Items = Items
