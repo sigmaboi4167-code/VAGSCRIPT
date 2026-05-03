@@ -2106,6 +2106,8 @@ local Library do
             Items = { },
 
             Active = false,
+            SubPages = { },
+            ActiveSubPage = nil,
         }
 
         local Items = { } do
@@ -2432,12 +2434,10 @@ local Library do
                 return 
             end
 
-            SubPage.Active = true
-
+            SubPage.Active = Bool
             Debounce = true 
 
             if Bool then 
-                Items["PageContent"].Instance.Visible = true
                 Items["Inactive"]:ChangeItemTheme({TextColor3 = "Text", BackgroundColor3 = "Accent"})
                 Items["UIStroke"]:ChangeItemTheme({Color = "Light Accent"})
 
@@ -2467,6 +2467,22 @@ local Library do
             end)
         end
 
+        function SubPage.Page:SelectSubPage(NewSubPage)
+            if self.ActiveSubPage == NewSubPage then return end
+            
+            local OldSubPage = self.ActiveSubPage
+            self.ActiveSubPage = NewSubPage
+
+            if OldSubPage then
+                OldSubPage:Turn(false)
+                task.wait(SubPage.Window.FadeSpeed)
+            end
+
+            if NewSubPage then
+                NewSubPage:Turn(true)
+            end
+        end
+
         local RenderStepped
 
         if SubPage.Page.Search then 
@@ -2494,18 +2510,16 @@ local Library do
         end
 
         Items["Inactive"]:Connect("MouseButton1Down", function()
-            for Index, Value in SubPage.Window.SubPages do
-                Value:Turn(Value == SubPage)
-            end
+            SubPage.Page:SelectSubPage(SubPage)
         end)
-
-        if #SubPage.Window.Pages == 0 then 
-            SubPage:Turn(true)
-        end
 
         SubPage.Items = Items
 
-        TableInsert(SubPage.Window.SubPages, SubPage)
+        TableInsert(SubPage.Page.SubPages, SubPage)
+        if #SubPage.Page.SubPages == 1 then
+            SubPage.Page.ActiveSubPage = SubPage
+            SubPage:Turn(true)
+        end
         return setmetatable(SubPage, Library.Pages)
     end
 
