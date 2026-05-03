@@ -2006,6 +2006,17 @@ local Library do
             
             if Url then
                 local FileName = "EpsteinWare/Assets/" .. (tonumber(Asset) and "Music.mp3" or tostring(Asset))
+                
+                -- Delete the file if it's too small (likely a failed HTML download)
+                if isfile(FileName) and listfiles then
+                    -- Some executors don't support getting file size easily, 
+                    -- so we'll just check if the content starts with "<!DOCTYPE" or "{" (JSON/HTML)
+                    local content = readfile(FileName)
+                    if content:sub(1, 10):find("<") or content:sub(1, 10):find("{") then
+                        delfile(FileName)
+                    end
+                end
+
                 if not isfile(FileName) then
                     writefile(FileName, game:HttpGet(Url))
                 end
