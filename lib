@@ -1972,7 +1972,7 @@ local Library do
                 BorderColor3 = FromRGB(0, 0, 0),
                 AutoButtonColor = false,
                 Name = "\0",
-                Image = "rbxassetid://" .. Page.Icon,
+                Image = (#tostring(Page.Icon) > 11 and "rbxthumb://type=Asset&w=150&h=150&id=" .. Page.Icon or "rbxassetid://" .. Page.Icon),
                 BackgroundTransparency = 1,
                 Size = UDim2New(0, 25, 0, 25),
                 ZIndex = 2,
