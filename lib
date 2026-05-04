@@ -71,7 +71,7 @@ local Library do
     Library = {
         Flags = { },
 
-        MenuKeybind = tostring(Enum.KeyCode.Z), 
+        MenuKeybind = tostring(Enum.KeyCode.RightShift), 
 
         Tween = {
             Time = 0.25,
@@ -567,9 +567,10 @@ local Library do
         return getcustomasset(self.Folders.Assets .. "/" .. ImageData[1])
     end
 
-    Library.Round = function(self, Number, Float)
-        local Multiplier = 1 / (Float or 1)
-        return MathFloor(Number * Multiplier) / Multiplier
+    Library.Round = function(self, Number, Decimals)
+        if not Decimals or Decimals <= 0 then return MathFloor(Number + 0.5) end
+        local Multiplier = 10 ^ Decimals
+        return MathFloor(Number * Multiplier + 0.5) / Multiplier
     end
 
     Library.IsMouseOverFrame = function(self, Frame)
@@ -1953,7 +1954,8 @@ local Library do
                 return 
             end
 
-            if tostring(Input.KeyCode) == Library.MenuKeybind or tostring(Input.UserInputType) == Library.MenuKeybind then
+            local menuKey = (Library.Flags["MenuKeybind"] and Library.Flags["MenuKeybind"].Key) or Library.MenuKeybind
+            if tostring(Input.KeyCode) == menuKey or tostring(Input.UserInputType) == menuKey then
                 Window:SetOpen(not Window.IsOpen)
             end
         end)
@@ -2427,15 +2429,8 @@ local Library do
             }) 
         end
 
-        local Debounce = false 
-
         function SubPage:Turn(Bool)
-            if Debounce then 
-                return 
-            end
-
             SubPage.Active = Bool
-            Debounce = true 
 
             if Bool then 
                 Items["Inactive"]:ChangeItemTheme({TextColor3 = "Text", BackgroundColor3 = "Accent"})
@@ -2444,6 +2439,9 @@ local Library do
                 Items["Inactive"]:Tween(nil, {TextTransparency = 0, BackgroundColor3 = Library.Theme.Accent})
                 Items["Shadow"]:Tween(nil, {ImageTransparency = 0.6})
                 Items["UIStroke"]:Tween(nil, {Color = Library.Theme["Light Accent"]})
+
+                Items["PageContent"].Instance.Visible = true
+                Items["PageContent"].Instance.GroupTransparency = 0
             else
                 Items["Inactive"]:ChangeItemTheme({TextColor3 = "Text", BackgroundColor3 = "Inline"})
                 Items["UIStroke"]:ChangeItemTheme({Color = "Border"})
@@ -2451,35 +2449,9 @@ local Library do
                 Items["Inactive"]:Tween(nil, {TextTransparency = 0.5, BackgroundColor3 = Library.Theme.Inline})
                 Items["Shadow"]:Tween(nil, {ImageTransparency = 1})
                 Items["UIStroke"]:Tween(nil, {Color = Library.Theme.Border})
-            end
 
-            if Bool then
-                Items["PageContent"].Instance.Visible = true
-            end
-
-            local NewTween = Tween:Create(Items["PageContent"].Instance, TweenInfo.new(SubPage.Window.FadeSpeed), {
-                GroupTransparency = Bool and 0 or 1
-            }, true)
-
-            Library:Connect(NewTween.Tween.Completed, function()
-                Debounce = false
-                Items["PageContent"].Instance.Visible = Bool
-            end)
-        end
-
-        function SubPage.Page:SelectSubPage(NewSubPage)
-            if self.ActiveSubPage == NewSubPage then return end
-            
-            local OldSubPage = self.ActiveSubPage
-            self.ActiveSubPage = NewSubPage
-
-            if OldSubPage then
-                OldSubPage:Turn(false)
-                task.wait(SubPage.Window.FadeSpeed)
-            end
-
-            if NewSubPage then
-                NewSubPage:Turn(true)
+                Items["PageContent"].Instance.GroupTransparency = 1
+                Items["PageContent"].Instance.Visible = false
             end
         end
 
@@ -2510,7 +2482,9 @@ local Library do
         end
 
         Items["Inactive"]:Connect("MouseButton1Down", function()
-            SubPage.Page:SelectSubPage(SubPage)
+            for _, Value in SubPage.Page.SubPages do
+                Value:Turn(Value == SubPage)
+            end
         end)
 
         SubPage.Items = Items
@@ -2908,7 +2882,8 @@ local Library do
                             Library:SafeCall(Keybind.Callback, Keybind.Toggled)
                         end
                     elseif type(Key) == "table" then 
-                       local RealKey = (Key.Key == "Backspace" or Key.Key == "Unknown") and "None" or Key.Key
+                        local keyName = typeof(Key.Key) == "EnumItem" and Key.Key.Name or tostring(Key.Key)
+                        local RealKey = (keyName == "Backspace" or keyName == "Unknown") and "None" or Key.Key
                         Keybind.Key = tostring(Key.Key)
 
                         if Key.Mode then
@@ -2919,8 +2894,8 @@ local Library do
                             Keybind:SetMode("Toggle")
                         end
 
-                        local KeyString = Keys[Keybind.Key] or StringGSub(tostring(RealKey), "Enum.", "") or RealKey
-                        local TextToDisplay = KeyString and StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
+                        local KeyString = Keys[keyName] or (RealKey == "None" and "None") or StringGSub(tostring(RealKey), "Enum.", "") or RealKey
+                        local TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
 
                         TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "")
 
@@ -3242,7 +3217,7 @@ local Library do
             Default = Data.Default or Data.default or 0,
             Max = Data.Max or Data.max or 100,
             Suffix = Data.Suffix or Data.suffix or "",
-            Decimals = Data.Decimals or Data.decimals or 1,
+            Decimals = (Data.Decimals ~= nil and Data.Decimals) or (Data.decimals ~= nil and Data.decimals) or 1,
             Callback = Data.Callback or Data.callback or function() end,
 
             Value = 0,
@@ -3385,7 +3360,8 @@ local Library do
 
             Library.Flags[Slider.Flag] = Slider.Value
 
-            Items["Accent"]:Tween(TweenInfo.new(0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2New((Slider.Value - Slider.Min) / (Slider.Max - Slider.Min), 0, 1, 0)})
+            local range = Slider.Max - Slider.Min
+            Items["Accent"]:Tween(TweenInfo.new(0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2New(range ~= 0 and (Slider.Value - Slider.Min) / range or 0, 0, 1, 0)})
             Items["Value"].Instance.Text = StringFormat("%s%s", tostring(Slider.Value), Slider.Suffix)
 
             if Slider.Callback then 
@@ -4053,7 +4029,8 @@ local Library do
                     Library:SafeCall(Keybind.Callback, Keybind.Toggled)
                 end
             elseif type(Key) == "table" then 
-                 local RealKey = (Key.Key == "Backspace" or Key.Key == "Unknown") and "None" or Key.Key
+                local keyName = typeof(Key.Key) == "EnumItem" and Key.Key.Name or tostring(Key.Key)
+                local RealKey = (keyName == "Backspace" or keyName == "Unknown") and "None" or Key.Key
                 Keybind.Key = tostring(Key.Key)
 
                 if Key.Mode then
@@ -4064,8 +4041,8 @@ local Library do
                     Keybind:SetMode("Toggle")
                 end
 
-                local KeyString = Keys[Keybind.Key] or StringGSub(tostring(RealKey), "Enum.", "") or RealKey
-                local TextToDisplay = KeyString and StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
+                local KeyString = Keys[keyName] or (RealKey == "None" and "None") or StringGSub(tostring(RealKey), "Enum.", "") or RealKey
+                local TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "") or "None"
 
                 TextToDisplay = StringGSub(StringGSub(KeyString, "KeyCode.", ""), "UserInputType.", "")
 
