@@ -236,7 +236,12 @@ local Library do
 
         Tween.Create = function(self, Item, Info, Goal, IsRawItem)
             Item = IsRawItem and Item or Item.Instance
-            Info = Info or TweenInfo.new(Library.Tween.Time, Library.Tween.Style, Library.Tween.Direction)
+            
+            local DefaultTime = (Library and Library.Tween and Library.Tween.Time) or 0.25
+            local DefaultStyle = (Library and Library.Tween and Library.Tween.Style) or Enum.EasingStyle.Quad
+            local DefaultDir = (Library and Library.Tween and Library.Tween.Direction) or Enum.EasingDirection.Out
+            
+            Info = Info or TweenInfo.new(DefaultTime, DefaultStyle, DefaultDir)
 
             local NewTween = {
                 Tween = TweenService:Create(Item, Info, Goal),
@@ -3482,20 +3487,21 @@ local Library do
         Items["Drag"]:Connect("MouseButton1Down", function(Input)
             Slider.Sliding = true 
 
-            local SizeX = ((UserInputService:GetMouseLocation().X - 15) - Items["RealSlider"].Instance.AbsolutePosition.X) / Items["RealSlider"].Instance.AbsoluteSize.X
+            local MousePos = UserInputService:GetMouseLocation()
+            local SizeX = ((MousePos.X - 15) - Items["RealSlider"].Instance.AbsolutePosition.X) / Items["RealSlider"].Instance.AbsoluteSize.X
             local Value = ((Slider.Max - Slider.Min) * SizeX) + Slider.Min
 
             Slider:Set(MathClamp(Library:Round(Value, Slider.Decimals), Slider.Min, Slider.Max))
         end)
 
         Items["Drag"]:Connect("InputEnded", function(Input)
-            if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+            if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
                 Slider.Sliding = false 
             end
         end)
 
         Library:Connect(UserInputService.InputChanged, function(Input)
-            if Input.UserInputType == Enum.UserInputType.MouseMovement and Slider.Sliding then
+            if (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) and Slider.Sliding then
                 local SizeX = ((Input.Position.X - 1) - Items["RealSlider"].Instance.AbsolutePosition.X) / Items["RealSlider"].Instance.AbsoluteSize.X
                 local Value = ((Slider.Max - Slider.Min) * SizeX) + Slider.Min
 
