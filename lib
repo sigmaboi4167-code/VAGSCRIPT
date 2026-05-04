@@ -2594,6 +2594,32 @@ local Library do
         return setmetatable(Section, Library.Sections)
     end
 
+    Library.Sections.Image = function(self, Data)
+        Data = Data or { }
+        local ImageUrl = Data.Url or Data.url or ""
+        local ImageSize = Data.Size or Data.size or UDim2.new(1, 0, 0, 100)
+        
+        local Items = { } do
+            Items["Image"] = Instances:Create("ImageLabel", {
+                Parent = self.Items["Content"].Instance,
+                Image = ImageUrl,
+                Size = ImageSize,
+                BackgroundTransparency = 1,
+                BorderSizePixel = 0,
+                ScaleType = Enum.ScaleType.Crop,
+                Name = "\0",
+                ZIndex = 5
+            })
+            
+            Instances:Create("UICorner", {
+                Parent = Items["Image"].Instance,
+                CornerRadius = UDim.new(0, 4)
+            })
+        end
+        
+        return Items["Image"]
+    end
+
     Library.Sections.Toggle = function(self, Data)
         Data = Data or { }
 
