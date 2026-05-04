@@ -23,8 +23,8 @@ local function SafeDownload(path, url)
     end
 end
 
-SafeDownload("EpsteinWare/Assets/Logo.png", "https://cdn.discordapp.com/attachments/1498828561388146792/1500378380590125237/image-removebg-preview.png")
-SafeDownload("EpsteinWare/Assets/Background.png", "https://cdn.discordapp.com/attachments/1498828561388146792/1500376539835924490/6e3a7b36-14cb-4e48-afc3-7099bf472714.png")
+SafeDownload("EpsteinWare/Assets/Logo.png", "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/image-removebg-preview.png")
+SafeDownload("EpsteinWare/Assets/Background.png", "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/6e3a7b36-14cb-4e48-afc3-7099bf472714.png")
 
 if getgenv().Library then 
     getgenv().Library:Unload()
