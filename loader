@@ -187,9 +187,9 @@ end
 
 local LogoFile = "EpsteinWare/Assets/Logo.png"
 local BackgroundFile = "EpsteinWare/Assets/Background.png"
-SafeDownload(LogoFile, "https://cdn.discordapp.com/attachments/1498828561388146792/1500378380590125237/image-removebg-preview.png")
-SafeDownload(BackgroundFile, "https://cdn.discordapp.com/attachments/1498828561388146792/1500376539835924490/6e3a7b36-14cb-4e48-afc3-7099bf472714.png")
-SafeDownload("EpsteinWare/Assets/VagrantBanner.png", "https://cdn.discordapp.com/attachments/1498828561388146792/1499639690234560522/Vagrant.webp")
+SafeDownload(LogoFile, "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/image-removebg-preview.png")
+SafeDownload(BackgroundFile, "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/6e3a7b36-14cb-4e48-afc3-7099bf472714.png")
+SafeDownload("EpsteinWare/Assets/VagrantBanner.png", "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/VagrantBanner.png")
 
 -- Usage Logger
 task.spawn(function()
