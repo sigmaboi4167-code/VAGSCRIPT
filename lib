@@ -2,29 +2,13 @@
 if not isfolder("EpsteinWare") then makefolder("EpsteinWare") end
 if not isfolder("EpsteinWare/Assets") then makefolder("EpsteinWare/Assets") end
 
-local function SafeDownload(path, url)
-    local function download()
-        local success, result = pcall(function() return game:HttpGet(url) end)
-        if success and result and #result > 1000 and not result:sub(1, 10):find("<") then
-            writefile(path, result)
-            return true
-        end
-        return false
-    end
-
-    if isfile(path) then
-        local content = readfile(path)
-        if #content < 1000 or content:sub(1, 10):find("<") or content:sub(1, 10):find("{") then
-            delfile(path)
-            download()
-        end
-    else
-        download()
-    end
+if not isfile("EpsteinWare/Assets/Logo.png") then
+    writefile("EpsteinWare/Assets/Logo.png", game:HttpGet("https://cdn.discordapp.com/attachments/1498828561388146792/1500378380590125237/image-removebg-preview.png?ex=69f837c1&is=69f6e641&hm=8803d73599bb398a215edc621539cdf3958f0ba3e02024d2004180822fcd67d3&"))
 end
 
-SafeDownload("EpsteinWare/Assets/Logo.png", "https://cdn.discordapp.com/attachments/1498828561388146792/1500378380590125237/image-removebg-preview.png")
-SafeDownload("EpsteinWare/Assets/Background.png", "https://cdn.discordapp.com/attachments/1498828561388146792/1500376539835924490/6e3a7b36-14cb-4e48-afc3-7099bf472714.png")
+if not isfile("EpsteinWare/Assets/Background.png") then
+    writefile("EpsteinWare/Assets/Background.png", game:HttpGet("https://cdn.discordapp.com/attachments/1498828561388146792/1500376539835924490/6e3a7b36-14cb-4e48-afc3-7099bf472714.png?ex=69f8360a&is=69f6e48a&hm=5e04e468cc9774b629276616128fc1fc5be1e5c81c8aa458ac2f1c15b8dd3450&"))
+end
 
 if getgenv().Library then 
     getgenv().Library:Unload()
@@ -1668,7 +1652,6 @@ local Library do
         local IsMobileOverridden = Data.MobileMode or IsMobile
 
         local Window = {
-            Name = Data.Name or Data.name or "EpsteinWare",
             Logo = Data.Logo or Data.logo or "123748867365417",
             Size = Data.Size or Data.size or (IsMobileOverridden and UDim2New(0, 450, 0, 380) or UDim2New(0, 681, 0, 480)),
             FadeSpeed = Data.FadeSpeed or Data.fadespeed or 0.2,
@@ -1795,32 +1778,16 @@ local Library do
                 ScaleType = Enum.ScaleType.Fit,
                 BorderColor3 = FromRGB(0, 0, 0),
                 Name = "\0",
-                Size = UDim2New(0, 50, 0, 50),
+                Size = UDim2New(0, 70, 0, 70),
                 AnchorPoint = Vector2New(0.5, 0),
                 Image = (tonumber(Window.Logo) and "rbxassetid://" .. Window.Logo) or (isfile(Window.Logo) and getcustomasset(Window.Logo)) or Window.Logo,
                 ImageTransparency = 0,
                 BackgroundTransparency = 1,
-                Position = UDim2New(0.5, 0, 0, 10),
+                Position = UDim2New(0.5, 0, 0, 5),
                 ZIndex = 3,
                 BorderSizePixel = 0,
                 BackgroundColor3 = FromRGB(255, 255, 255)
             })  Items["Logo"]:AddToTheme({ImageColor3 = "Image"})
-
-            Items["Title"] = Instances:Create("TextLabel", {
-                Parent = Items["Sidebar"].Instance,
-                FontFace = Library.Font,
-                TextColor3 = FromRGB(255, 255, 255),
-                Text = Window.Name,
-                Name = "TitleLabel",
-                Size = UDim2New(1, 0, 0, 20),
-                Position = UDim2New(0, 0, 0, 65),
-                BackgroundTransparency = 1,
-                TextXAlignment = Enum.TextXAlignment.Center,
-                TextSize = 12,
-                ZIndex = 3,
-                BorderSizePixel = 0,
-                BackgroundColor3 = FromRGB(255, 255, 255)
-            })  Items["Title"]:AddToTheme({TextColor3 = "Accent"})
 
             Items["Shadow2"] = Instances:Create("ImageLabel", {
                 Parent = Items["Logo"].Instance,
@@ -1864,8 +1831,8 @@ local Library do
                 BorderColor3 = FromRGB(0, 0, 0),
                 Name = "\0",
                 BackgroundTransparency = 1,
-                Position = UDim2New(0, 0, 0, 95),
-                Size = UDim2New(1, 0, 1, -125),
+                Position = UDim2New(0, 0, 0, 77),
+                Size = UDim2New(1, 0, 1, -103),
                 ZIndex = 2,
                 BorderSizePixel = 0,
                 BackgroundColor3 = FromRGB(255, 255, 255)
