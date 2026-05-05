@@ -1,61 +1,283 @@
--- Protected by Monsy Obfuscator
-local U2fL7Qwoqb6Qr=string.len("")
-local M6Ook_jtFeR=math.floor(0)
-local f_geh0AAlqCTP=0
-do end
-local emB3LblU3Q6V2={"e666336fca0212e740790c5935f6abb0dea2fb583179af4540549ec2f308e37077421920ef8d4279f0ca03e9a2c768adf27b5338d2ee59111b6a35dd13ca32053c2d85195267cab5bb90a7782691afda77d7b406d423b7d9d4776252e5298597742c03afe4a5a496799a0b8b304bd08e5","bae42d0a900fac77b5753505ca098049cbd639cf7c0cb06ed4ab1cb569047800aa0d000c13526cbe64024481fc579b0fd8c63beb98e892c7386b9f03acbb240d27530184a053ff1348dd561eafbd4ca40f0dd83e913340acd760cfaf291a29e72a2895a57d9e878b321a03eb5f4d3e9f1","0cea5d624f1d7dd08cff0340e142d46ff829f5377d693ae96f7f1cf30b5bc50d89d52f0c4952b4b684f388fcea61e698aa7abf20fdef54da46b9a90956877d8724d9639ea276c00caf64ec536576620089def5bda8e928542b3e2db9d13b81fb5d5547829db46c62757b79d99dd7dd113","1c1eeef56b28b090d2a92ecceaeceb1eaa81fcb19054dd340b8e25a06043112aa67db21d6dab45cb0b4ee6a651d555fd504d1f30c56e718d4940ad8a214551edd212aaf63e8a38d32a965536805de9fac1b6d6488d4d868367d2f3d1cdf37a09a3907046cf3dc0da3e047bbbf26a094a2","1ce6755ea848587cbeda243e5e67004102f40f50cdb1e8b8d048b62c26aee82e958008d1347f6d1a47ab008f67f513ede02c45fd3fd783baa4281dff1fc2d1b8b006bb73fbe5a7cc3f1e002fe493b960c75710f32af326808e3cd4cc48daa10cd8a13f51e58c5a78c1f816b8227d2ee58","f885eb67f50a22e2e540642f0a1b7deb50b77922150c8c24b1e6863b88367705117aafcb8a190ec40eb00a552384604b611630110fea27727ff57e7f27fe4abc4119c907725c8ad3a54ba747ae6938ac426c0db1f4d9446009182545ed509e683d9b787ea8d171ebf21ddf4170f972653","7e9bdf69b6b716754c27d53c53efb980e0ae2e1ef019083cc73e1fe8f048","1c95f287087fa00bd56ac2198fcc0c71c28ab80f110c8ed39ba796e618e15d50ac724a08f85528d71cbc29ebfa9100a5b33c2c0d41cdae72e5b5bb47d0cbc92943f3cd93f913890ebca5f07c5effb4682b5fa795d535bbdf34be24d2ed4ac5bb1309488f2f841aadb4410e1e3750c7f77","d57a42425736a1c2aa5d200e97c736c472ee6d570081ecc6e8df6d4c6550c5d4eafa19877052ab72d8c684792add7b60e93aa632894e11f0778923fc9bc8309cae7df85425acdd7e12283fdf1373862db6d97b63ec9915ae9aad7fbb409a211364d86dc5e22111d62ed91ab1c35682ce8","af115b0598805fe98847b50a8d2218a4e00b01f236f75f8f8ecf164d0f0e9d29961eb915a196d8855ba03114ad3c0712b1d4f726f7d57960ab00a59054a58884919f29f8103bdbdcebd4d91abae5b2d2508787ed948a15289f380d3d05b37983a3dee5e9b46eb91eddd01350dacd45d28","a30aa9410e0639df2ed978e0307a4bfccdf4892d106136b3ce500df8292b0489c6d462178fb8993805f8e5cacd4c72bd564cae2b628beb94915aa4e43db7a75167f846b1fe5acf0759375a208e853adb22acda250b3e8c8fcb9d56d341538a8b021650bcbed70163e53cd9822e079c3c3","c832fff9adfa1a9a8ae231c460b993ff654e43298ae2a77376e909b04c6fb268cb3636ad95088c1508255e44a2872a2023f1a9cbfd31b0fdd2c2985ea2099f464888cde47525713006fca18665973f42847783eaacb6e75816c7c0c0864e23dc5f1f1e0851298561b9befc056ffca4410","6151ddaba291479b1cb804e6b0e6f3cb79e94556df56e3dacb5ec8d7b49e43a75e370fb361c3d7ff1bd999112615df40e41c89352d4b44f4ed7a967652b8817bcca972f7459f6597d8325e0b3cad23c2eab31562531d251ba872e9a7f3ded5da2fcc10b320971ad0d4fefa2f387950802","6d41a216185b2d6d2b5b0eafec5e5b90996c7992a0cb0ea560e1711686a8365a1de6043f5363a9733cc4dcad317e30a384d862d941478c37b411126465cfdff81e20bd073542d6208697969deaaa76e1917de72cb8e9a65c306c0f13dc59b5f6b16d9afe8a0a20a00ab33eeb0b87d077c","be245a0a1aacca44baf3485e01243f0b1d95e76a9d381f27188b9f007d2767f91ad75a547696f912cfcff6c17f54dcf5cd57f50b6d3f5ff9132e6e89a35944982d0c0e59933eb02d1a621dff33489b403103cf72f881b6e1bf721e04a240d35074924e39465714e211bda555deb33f985","937b2ce0050e3555d4b96581fe94c581410263552ea0bbb06f71b0c9ccd1000c6ebac04be12ea98f977a986f7e198df04bb4b0c55c63f79cafc1c879b159a33f2a3617ed757c3daa18dfd991c5b7790d83b5c8808731dad88d7eeb5952be5e1cda2b4ed80bfaea7380321616f268e6d97","582404665aef42fd995431e65700b8d83d76c281ec2d6838d7b127525f1735cdae55a27883e2da83d5c45d4cf11f578204c991690e08981f8e1cd569198cfd9ad03303981a854302358b2033f6c8208c8e6ad83a90ef5b40c850bf05014fddfa19f268441295a03ea17dfe0234e349ce8","110c87cb4619f61bc633846006a7633f7795b97a9b44b08c4cd774985073bbd20175aab451a3da9a0cc347a5d4b7db90d7c91b46c5a1b7cc6106f4ac0373936d0806331132ae2e00cb16a34fefca5946dd13b2ccb058d897b7467044d0d8b0e9ddc61ed0d1cc65a212d943fa51ca2e74b","5f0cf8dec6091605e8075bbc83ca7164c744c8f20b9e5c725c4b2e7fa632ce20ec54a512666eccc22f2d1a011dfb626beaaa91926c679103c46bbe4a86c0e1339dda81fe4b116574a52c6be1c771fe26ec7da96a841b531d291f5e5129974b14ddb0dd4cbbde14bafe1294420f627470b","1598698b3c312d547fbde4307c7f64052d47d4ee1d693ff6ec2b2f55b1f1a60cf57c40e58f452f2e469fa010c38ed8dac70811bb2f113e86e105aff6dd32a19b862ab3405ce0c0630834537dfcdda13f796e5e82b137885ad28d9868e0002e7de197751fd9cd775bc13520a978f2bb0e0","6798cc2953d6ef981c2f0f57c91b5ead865c6fd5e702ad3b4dedde79b86f787642134d3ce0c7755e6ef01585e4bb5700956e232261d58655729ee52c59cd3a3a845af3c8d13953a16b05428b0d5902f1152e2be1ab706f1c174d1925e632c14aefdded154994a2a2481221c5c7626a3f7","0110a9cf30d097bf25a47ef57bd11641bfa953a78cd2f0aac510789643245b88d9ae1fa8edbed3abdb01716441588c002ad0e2eb12b11b08a15f52c8bd649fb4845294ab2430e7d6af866f9f55dbb9529e5971ddf31a9f86be72c181040c0032b5afb1baeca96fc57be7519eb4737789f","0059619961182f4ae984813b626be1edcf8be9001ecd967cc245b80904de46d15e7e266f472bdc235281d5010aa9a7970c83f29aa8cf63b8b417f66b12d0fca307204b53218c0d88704b6c855507f1e3ed87d463c842b963101ea6cd92dcc3fb2d604b44e3a9222437560f45fb9b5efb8","38e03ecc81b53ed51c4e741ee5bbbe9c2965a1dc7a30833c87e256193535e45990aad6f8c54524a64d6ce3ab16bc451e20636e6646db0652446443cb498727f2e28bd63a0db1127a484c89bab25e44e857975c1b4d1d8a05120a084f8a7d9e6ffa10e3c686aaef7949112c3caaeb2805e","f9c63f1e6c8417ffbcd2d0b306e3c40d8bf5eed95ad2161071986d8a16ebe1f0a46ad91a9aea4e6911510cc5aef4b9c3ed62efd4a19f77b25994b6ad9981d93cfa7e78568df1f5a81f4eca3bc6b8e7daf2845046ce545fd1710d0c38907345e0c08493976663a374b730096298f97f34d","7ad2853a2fe3baaff3e85986220e419085143523e0abda4c1365d8fcf4d4a309c542575c62304c1fc4591ba3a7e19e8fbcd19fef8dcf2698651cf1b62c7a5c2c890f1fc99bc95c3e2f60876e5782fb1e7cbce161b03a444591a3a5cecbd32353d90193e8679c815d04f0ff9866501a62d","21b86071cd53ed1fdf3226a4599222931489a74cbf8ff0a39c3ab97fed3bc4c6d274eccde6226717ed287bdc9b42cdf41e155d120dc2752ca069f4481d4ab008d04e98c0896d6c355897026674b2b47c0a2c912e37819b1f9c94d4deb0f3c45967bca6428bd236f5ba75f2a232352bcf3","f8e6ef707663b11300a1c23c678c96cedaa0ee491b6fc88cfbdefae64945ecac8c519dbe342039d821abaadda5179fe57bfde049a80c27b1cb4858d4eb1543e218c7a719aae6f5bb1d19165f318850dbc60c3d49127afe93fa8852096ff2e17dbc35e5e4659cf1ccb19b26b44b78e8a13","a961a4419192019f67a83d5e28c455a877815e926e4d91a50977c30d6984d9d1d0d8dbfc2291ad8a6aa1a4610da4434694461f7d6f87bc651b1112597e471b667997294cc30bf7b8af5ddd22cead269a85bf4b8f33ea84606026570640b4dad4c976b6a64cf5dd2be44396b784aa90338","e73590e4de9b2c6e878045e1444fa6832854446879288634738274b90399f08e6c56ebc80d919eb28f5f12260f97522b6d2b9ab93ddc853cee8a5bfc3a5f02be11c97ffa3210966cbd6e014f9ecae39f059301b20eb386ddffb92d6e76856450e726783957830df5f3a9e0501b29d6ff6","51314da646e136c75d69faa5f5a3dcd5d8b47f7471003bd3a4f1c95e9c70c29c8fc4e9a343353eada67ef5dff46bf7eba9c43ecd5ae6024ace79b1dff1342f9b36f92650b1a9a57a1f1860d3ada25d4de9e4a704d3c4a82fc15039d41f1800796ff205c0cb55a49399a445190d503b71d","4779910cb870447b2ce03cb4b93e0b886c920ab79424dc5671d2ea8aa80f305cf7aee671789641390ed5457bbb7939b2d045e4b4d997265f9bf490753b143f61325c1636804c0ea2d194a9d196f545e385646da14b67857bef9eca9ede519cb004488a947996709b4e09fcc1ac4dc02b3","7b1e7886d1c807022eb2991dacc0ae056e2acb2222cd0fa98e89e102d9442e231249040e73ea78e2124bfbaa2f35a503e435c7b4627690c5c924ba33e03f1d702b2e9880124f86d9b9719215e81340ed8cbedc3f8ff96a82344ca2474d68a1fede81e3fd260e5e2341fefca473d40db08","340712649e32ba4ab5fd6c11e23702a8bf6f75308a87c9dd79e2d39a22b7367b59dd0067fe1be5b75043f1f75d00fc39e04d872973a7b9cc714710cac43b00734d1bc1de6041d0e9ad02f911e4895df08844381fd780ee5396b38e4fd1615347f45cc7a513cf9289820c5f225d0d1cbae","ffaaec43e3ec7a8dd79352f75f67e8a6d688f4289a9f025cb8d95ff0904f4eda9dfbb6ec63ec98da6dc10a1d57ba91a9052d8ea179f0058031a34d00fe6f38b66cd337b54c35b54bfe4ff5d0725418336744dbcc254eaee581a0d1a8cb1ff407a3fb2f9c19e16640bcf643e738704fe1f","72d9d2afeb75b812655258970478145b0ad8be452e55f8052d99ff748c16cfafefb015ea61989595227b450d0590f4480904e0a1439ce8ecaed27ac5ef9e6b5c303fb5d51df2f42b9e845aab662ece5677ddb9be1117ebea3c549f0dd9263f3a3c6184803a8490a1f1c1d9c3e48e5a5c4","b3a7a1a30f7b4ee3d7887996de72b9a304a5b20ba90c592b679508f3620313bc03a8ef8e98b2242cd62f746f9a4a2e77df15cfe27e55241d213720fe78743afa06488e0f0dc7f421ea8d53bda19acdeb29944bde760ac14fbed518c91c788e3b80b0ec4dc1c8c517b0c5c34c4d1d3d469","373473eff3e5d60b47cf0a41fa22cf520f84ca7a104303153c3a1067f9371569fe5e749163db86b269dbca9fb9f1a9bac2a53f6226c42ea25e0ea040e87a66d7d37ea885bca895c8d08e146ad6f61130c0ed19f86faacb306391468a545a8446d24551ed796c2435d73d9a892a67fd0fb","32e663f9452657488dba11dd5576efe61cd449fd4588b24c8c7a19b6b2fed501c2cbb0fc4965d4d04b878155bf092e0685c932512b9a90303915c5f9efc4233d8ec96291296675aab09fdfb4d26cd22e2d912d718d6a47b75ac094696f52d26a3645177d8ed5668b18bd5588a39a24613","3689f5e2f0807e8250ac3b3d1da6431565f58e6f35236424c221b76e768b018cf5f3923beaaf3b8b283e7ea34a78deec6ab0f051acca8b9598dbca3fdf24d424662c238a4e96e64d5357b39d7ca90e70abc0a45cb668f9a4efbbc993c712b7da74841e67412f27b52269934dc6cd10091","b89a1e2d1ede6709bf0610630941999cdc80ab083039612e46e64ef2ca1dcf181e97efe5ca8eab2ffa743310947cfdda0462f31b6c530de73c62f4e640735dfd679fa3f218f534bf35a460df276fc79586d60041d669764fbc97af9c6e50cced65e16ce05f154ffcd13c699aa2172b5b4"}
-local y5zS8Xaf1mRF={7,8,15,30,19,10,41,26,5,12,2,11,33,34,28,6,18,25,16,29,3,17,14,27,4,1,21,23,36,9,40,35,24,22,37,39,31,13,38,20,32}
-local bXGOAcezQ={"7ba158e1c1353e82855a8c26e0f0905b892e537f9f5028e33f5daefb43fd2b6c9b52b54afe0814e90ca9be5b55306a964f2426c319ca2b97e80a8572efb5334284404f35155d97dd8d4a019065a0d851354dac6151b84aaf7a3b2e376112568276a7857d8f877e95abbaed477659f5592","2468499cf0d0cf848fb26ec2b1b272f3199a37e58ffccb420632a2677cf69668dc8e5e8e2a559d87e91421f369d9da64694388280b8648ee366e9e750fe8a5493e6c6ddb721247a6ba5878c86354c5a73b66b01459a07260c9e04f8a26dbb39ad5a8797410a0ccc2ade10e87a64fe3a4e","2bcd6bc76b1c383d9bef640c85b56919843badebc8e2355cc7c77d154a19","e4154fc8743f3b72345edc2c4b12b97af680591a257bbc1e91dd71294558869f74811990ad9b9289c250b0b2e31068be37217716449a8cc7e480339ed9b01bd98b2d74f08fd5933a7568e09962b892b01c1775c01679a70737badd43434b3d4dc2614f6996101ea712593b60605b52ac8","6041d33df3cc23d64ecf1450e0e177a83636e1ae81593e6e521fffc34f46a053346624007a8095bacabc3fd80317a1b0b83201b2b5437b541e8e82995a06914c89e2f01aeb7933f9b90caee4eab668a9618b83a379a41cdd8896eac6028931803c243903dffc5cbc1374dd40055778cb3","6889ad00dad87ed34018ec1ecb98a2d285f3ef93e009e1f5b02faf85162f96fa4f7ac36cd16da0b7e5f0e61ac300e05f56b6d90834beeeacd1512c6e488e5e46199913dd4973671e7cc257e6f60ed35e1ca39d4f53e79b308bf1f58575e305b23a0638dba55a5bae0b760e208cce5afdc","179a3dfc1fbeaa86cb408e31b75e27c90817d4f4ffcf8e7605dec1d5df361928d3edc6ce538d42c4f0db859e3656e6a80663fd54492da277f46e28eb06ca11b2a9e737e0520824e6181acdf0326305079202b7150ea693f5d8691c7a2a29d6459342993212864efd7f82b9be1c232f9b0","a95b13a39d3d555c58aa8483126d5076485fbec684ab899a49bd0c11e33af5f7e99018c3d99a28555d89ecea3c1892ac6b7102a7b28d08bf2f68edcdca0d043f1ee9886856f43f8ce9529cb383896bc22dff9baa760877995973d7c8bc3b61e542b604f35f93b8fdf488b69572e639bba","64fac54bdcbc74ab6e56a6d65d0f8dfc3fb873f48a46cc0940e277ec03c613017525e9bfcc25209b03b38b7b7782513428aa91195ff860717d85f4f1d5d4f6f45c0ee241037acad56b4017eda9c52645dff3633de34dae768aff6f1fe4cc19040e4319a8f16ce67439b59dce074f8c9be","773783049d4a0a188f0f940a49a8021f59f4b70463127b1dde72a8cbc1702252d732d488315f889bfb62494fb5a7704bdd166e9842593d8a0adaf75845647db628a621854619f63c1dc97377ef1ccb38ceaf9533abea2d75c73d7e7a161694a68908bae89e23042c479675cf1286b4b1d","2b93d9b6989e41978db0d225685e67e63075d7e3f50ab60ea54e5cb80516a94ff69592117bc1a2dab04c0cfe536baff197ccaaaa632e8cb34d2da6b83ca4b97221dbd0ef707909ca8141d20ca9700a7f991ee6c8f2d6d30428ce3f26cf3f6c170a2a8623bed30dd4da6e722ffaee21a33","eccb70bf86b7fcd6c30553bce98bcc00cc9f650a2b710125cb731e7d10005c5079e7f7a17ebedf944f060fc888be5277b682024953585ea62674a6707a5194c62691dc27a478085308639f38586014d019dd373ed8f37017e256bffb26173fbd3bf8ceca2b21cbd55b94709a05e962558","7de7318022400d9ca6742071b5415ee035c3f1c2cf702243fb091ff626129fc4249a527af31f6eadd964cb10bcc892efd1c80c1c1a0a16a6cc04a41bb83e9ac3af0f24263feed8c66331404a533e2c5a090d4f205526253d4515513e0382f6a4c3d577555a5052bca2e0b65b333532171","91915102958086456c7deac1569fd36df2eb8b22163393905a6953e5187aad88a0f8dbba65ea62b029a3d2a8b280825285a18723aed6d86a097a0501819f119736b0047bff0f0dddf71d2ed50e1425e525f9d09de322fea3fa7aae22f193a313372ad3d3d0b99a72dbca26639e9a3ee0a","f1ae76cfec08b50e3a3dcf0e8680f37efccc275e1690dd17f4023a6c470412cfc553076553a832e85f34dc3822edd998adf5d635074ba9fea03fc95c01985afd3e26bd96023b4e91e8ecc431134ba7ac0acf9cf9265c87a30ee7dc4ad18d39a3b1d6251a6bd31a5e1d9b3b1558f75f8e8","dda2178a477e29c94b2306a2fdeaf564a2f6a3bc3c7d55d92adcdadfece08d8cd6b21532ee41a2836e46f8d9351c43d195ef197fcd6d5e94e78765e8e5b62299cb90df2c5b1db47b939ca067337b2803f337d675e37fb12bd4cf79eb5e9ebd39a5a81f72063e65949c4bd12b93cb064f1","98df5d9339ca6321e87b395df070b526385571412355fe0d7b1575c61c2bc0c720b3ed92ad7956c4372fe884dc0cd174dae05b3fad3e8f4d508f71db9dacee10c0bc5f0975ef4ac44d16276272124ea27bdaa3ca541df85483747ac326db821db8620929561ea1d65c578438f8c8965d0","8df9ac38645486470671ce6b4b0cf6bc1ea08c076cc7ca8ffa1753a88464ec765b6375558af29981f1f67a665b23cf276d169b58add33a9a69e7dd24015a2274e981fb82cc2aed696939c870b76baf1c25328480aeba351cb3ae3f766a50cdc9774524c475261ce33ce0df9b71f8f6397","44feabb011afb7bed070543f60d08f06472163d2e5d53d05df7c82280a80f15b9ae4a0f7300b66b678811d61fe857db7e3defc7a3269d12808a2ad7c31b2b761548030c61e11a16106a593d803f7a94b33dfd41e6750d77d1f5c9765f435ed9ebce991d87ae24ddf728862a2d00e7e6d1","9ac00aabd0f8761a68d8e09adb0cd1b0c3ef94ca03a85b5abe9893815c148ed05f673e9594757000ff2826d69376a7a59c780601a56379c9e7771c1dc9f6cf1002a95c98ce2fc64d1b5dab8882ad4cf5fbe977868e35e9f85a7cb2f36d69013d33bc1966110658cd272c0a93d103a22f4","0e3b1594b0602cfadc1b8d761f6ce9fd5c792baeae0f6dbd1771fe3e85e0249c3fbd23c4a42c4d97726c378c5d7c421bcb0544ba8667c101ada18eb5b84bfc4374ff97da660139876855df84ba90754b68a750cbc586a0f264a8eb9b38414b33b642cc5193dbc0a190966b6cf8e15e13c","fc742564849610e043e153c6619bf10e838645b35ca8a82d2b46c041eb5e791b992188f5fca6166ac23d0ff43175e3102ff3728df6e8d9fdb073034454081f9044dfbc484869fc029f26e4b196ab1b0727f52f145ee3203deb152f1f32a7bd8730563abc0131656dfd3d939afd03b0fa1","ffae27e95b2be01dc58a654dda3d6ed139672b758031e26a2da012bc949f711faa5d5a86c5a4c51cf89b12bddd2ee52c92e3784d14bc06f9315bce22ef877e40c3476cab5be97060b9c27b5e13cec1295e94354df988cdcd7afa199553e20c9e592611becc42efb4fa54de5d22e1fd3ef","d4a39c596e6c3685445035480fac8cf6a370bd5ff50458f32dc069eeb44bb6a997e3d7770452266b17cd1e58839cade8c8e297befd8059b92eca46ffac89412b0c54f783d7116ef8159600d12e7afb53eb7797e06af665373b6459c88f1453d8f4b3c05e30ae15053e10852947e8837c9","bad8e3223ff91f0ce8aff63e853c0b2ecf1cbac57b77db12a40f2ae61c166635c239770048b1b1c72070967ebccda10a5cf435e665439840beb45d0a2df761d72fb730adcf8d46155f6fccc4785fa7cf3a05ea3ec67d7c48172a6383afb7bf053eb6e7e961e02a86f1d5dccdfd5d03132","bc195dfa6a12fc4c5145e7972b180dc92fd969a16f8c92661b379d3ef191b33086937f66907d245d5cda6997c517aa159401e3f7803bd2be21d1dd6fea9aee42977a8fc624c6dcfb6ffff756941abd3e209c7a545f19a19dcd11d10fec32df63dbbb5c36b9bc396a2678774a67d916bff","3bd2e5339be33737cfe07754caec93842fc640c30e06ce3a2454f29d5d6d0221f59ca5bbc779e5e9670c238c9b34b10f5c43cfc33a70a39798ec9710bed50dce6131e9e7f707f3b4abd46ab91eec7cad5e81b2be7dab415246b137e7868835a513518b796d3ecc9aa0a3fe3130380f2eb","0989e52b3b712db016d439b2c73350c8fceb3e35c77ce871e8b1d1d4a0956e7f0880649881f57e4404ecf644500625f6044b21ef5ea1c682ac2864c283e5c91ea0a1941c24935b49d629a27b8138c213e4d3eb74a8b1966b52320293b369707426c31aedaab00e2c230c1bb91e67849ab","ae7be71da7678bdf15dbdd2d68ace0751031f5702846307ab5989eeca1ac967d25524c056edfd0601bdfc4f9be599f7a311d880463d36eae942c32a064dfabe59405b78e6edc7d00e77a49dfc1b5aa2b61bb2aa99eb8822f10d19f8a821539014cd6f5041b7f4cc797b2812ffe701a122","ae91f2646070a2aadda33acf3429580a48cc181465e99d0176c7eabc391c352619479aaac772cec3763d228246dd6cfe740c00eb888fcb891d3dd49a01d19f9c6108b8fee2ee320a269dc7816ab20a99f7dda43f1c3413ccf3cd564b4ccd4b595fd6898c84dd868d42b2f8724795267f4","c21db9041a6320931c3f1e3a214bf1a26d86053523a01ddcb1ebbce383aa31cbed2f6ad8751eb752cf2fe1ddc278251cbcd8b6e8ff0bccfe0f71e99ec4850aa87177048fe504759962fe62ee25e312a982d8d777bbed417a24b3c4bc90bd9da86ab30c8cabf2c56a997322b703b10fbbe","56c09999010ee5dc8c450fd33a17e67a15641bcdaa5e38b01945e543dc6ff7d3a30abd019195736b7f838355412026e7ce7fc1385546526f23af3c1e7361e31bf81bf05934ad9614b130c6940cc3589f292de84f149f2d65a3b36bdcfc2debfe7692e6bbd212d1034173b6246f13c219b","f13a155f2b2a4eb9b4a23722c427ab5dd7db7ef090d435688aeed8a234f5e215a37a86092041adc197ddcd05c00521101ce7e74e549457c17ab8b7a1c47a865b968ea8fc53488d7047bfa129ddfec0413bd40c0f32bdc76f4f7e89e2b3d2e64f65e7c60bcb6abc9975012e295ebe02432","b89d7bb87daa4069d897cbc8521754dcf0cb44eef097a103755b9c7fb51d7b251a341818469aafbd4c7e6cc84969aa77f12d7f9d0fd2bde91d3283cae828bb1f46ebbc481e568bb84c72849ab97a528f21359828f004314eabe77e339398594a2421f5e6c11cd20e4beff5a8f8a6e0009","808d011b2ee5eed07534c571978c4c61182a4b5d478cb382656a32d27d3abeef0bcd84f84d83eacfef3fb002d0fb5bba5be7ae1df12d0a59f341feae6f941599f537c24a62c47977bda6a353778a01981e885c1f9355fe5fccfb8b5e4c20b9cba3f10caf1dcab91e2281d340ca69763b1","0360e3316885d6c09e4cf805ba335917218544be3d7c34d2e470c904a5c88b78af64f22b42dc8545aeaa8f339f1fe5d264859a3fdfdf767db488ee5e2cebcdea24ce95d1b49c8f8e5ee14041a5eb5893a2fc7ed329d0a47c45ef0875488b588b5a5c3c3ed72fcd6fd6b12de3498a3f15b","19e54926e1296a298a33fed882ea7f83b8d65a4f6063e9260fa56abd0320a6c0502253f1e21ecc2ca32f15b1a26356240ab47ef0ebbf382f4b147a7d43c647f5e67887a74d8f968232303a4c0ed9178009ba2c26de81f4c065a1f97db7df51986decc78ab5ce6a54119946607df186b5c","650e859b65b7e544f3c2de680f0c8aa4254ef833cf3d4cb25fbf7b22f112f4efeedef58d4f12d27ab9b769d3efc66e262447fd10c79dc2ea1e19e9a0c836eb95d510895044359b9466c5bda3897de648e2af1b0fefe194013fc4b656612a1ba0f5106eef110c12854aa10ce05fbbdd6e6","6cc3c46d2e5301b828e191e11ad18788a7e8fba3b728edbdc081be2cae8d248db80d1971c2f7a0a0604ebae2014cf826cf5d445284d8a10a7189e0ff953eef058acf77d3a8f681f2d77b306d6c56b6c36e8d453fe68bed03ccffc9144bca91ea13b0e6548dc843b9f23d2cee28cc1d8ee","da7a92cd3d00eedeacf00b1eefdee473c2ed10cb69caa797ec054603889a535500275ea1391232f6d6124e84694b30cbaaaaac919a5bfeb76df8ca6871184ab2b7181f68ef40138eaff6caf3ca62a5861f6c36bd5fb9183f5a68b580521275db4dd24659aed00147f56b945dc465f0c3f","e4b889516296935147accf1bf203dfe26e6a005266ce087e6f3693eff57e95e8b675d1a4cab40e1464b0da362c46e8267daef2d468409639118bfe7e7a3588417ca7f4a79761218d3a31d289a62b9bb96f7d40597bd754ae49003b6e40af965732aca81f01ab24fab0fdc4add9047356f"}
-local ovDltypxj={40,39,41,5,36,21,6,1,37,8,32,25,19,17,26,27,31,24,23,18,3,20,15,10,7,13,34,4,28,9,14,12,33,29,11,2,22,38,30,35,16}
-local i8gAYMjLugCB6z={}
-for qCkB8Xe5uOs=1,#y5zS8Xaf1mRF do i8gAYMjLugCB6z[y5zS8Xaf1mRF[qCkB8Xe5uOs]]=emB3LblU3Q6V2[qCkB8Xe5uOs] end
-i8gAYMjLugCB6z=table.concat(i8gAYMjLugCB6z)
-local pkXswi9Ct={}
-for qCkB8Xe5uOs=1,#ovDltypxj do pkXswi9Ct[ovDltypxj[qCkB8Xe5uOs]]=bXGOAcezQ[qCkB8Xe5uOs] end
-pkXswi9Ct=table.concat(pkXswi9Ct)
-local Rd1kCsDbV1w={}
-for qCkB8Xe5uOs=1,#i8gAYMjLugCB6z,2 do
-  Rd1kCsDbV1w[#Rd1kCsDbV1w+1]=tonumber(string.sub(i8gAYMjLugCB6z,qCkB8Xe5uOs,qCkB8Xe5uOs+1),16)
+local U = game:GetService("UserInputService")
+do
+    local c = U.WindowFocused:Connect(function() end)
+    local d = U.WindowFocusReleased:Connect(function() end)
+    if typeof(c) ~= "RBXScriptConnection" or typeof(d) ~= "RBXScriptConnection" then 
+    while true do
+            for i = 1, 5 do
+                task.spawn(function()
+                    while true do
+                        task.wait()
+                    end
+                end)
+            end
+        end
+    end
+    c:Disconnect()
+    d:Disconnect()
 end
-local Rq5_hJ_rK0={29,113,129,171,120,183,117,109,84,62,140,69,117,37,181,80,40,33,23,137,80,243,248,129,148,199,59,87}
-for qCkB8Xe5uOs=1,#Rd1kCsDbV1w do
-  Rd1kCsDbV1w[qCkB8Xe5uOs]=bit32.bxor(Rd1kCsDbV1w[qCkB8Xe5uOs],Rq5_hJ_rK0[(qCkB8Xe5uOs-1)%#Rq5_hJ_rK0+1])
+local a, b, c, d = 3, {
+    {
+        'AssetType',
+        'FaceMakeup',
+    },
+    {
+        'AssetType',
+        'LipMakeup',
+    },
+    {
+        'AssetType',
+        'EyeMakeup',
+    },
+    {
+        'UserInputState',
+        'None',
+    },
+    {
+        'VideoSampleSize',
+        'Small',
+    },
+    {
+        'VideoSampleSize',
+        'Medium',
+    },
+    {
+        'VideoSampleSize',
+        'Large',
+    },
+    {
+        'VideoSampleSize',
+        'Full',
+    },
+    {
+        'TextInputType',
+        'NewPassword',
+    },
+    {
+        'TextInputType',
+        'NewPasswordShown',
+    },
+    {
+        'ExperienceAuthScope',
+        'DefaultScope',
+    },
+    {
+        'ExperienceAuthScope',
+        'CreatorAssetsCreate',
+    },
+}, 0, {}
+
+for e, f in ipairs(b)do
+    local g, h = f[1], f[2]
+    local i = pcall(function()
+        local i = Enum[g][h]
+    end)
+
+    if not i then
+        c = c + 1
+
+        d[#d + 1] = g .. "." .. h
+    end
 end
-local tC9dRhz1jnch={}
-for qCkB8Xe5uOs=1,#pkXswi9Ct,2 do
-  tC9dRhz1jnch[#tC9dRhz1jnch+1]=tonumber(string.sub(pkXswi9Ct,qCkB8Xe5uOs,qCkB8Xe5uOs+1),16)
+
+if c >= 10 then -- Increased threshold to prevent false positives with obfuscators
+    warn("EpsteinWare: Security validation failed. Please check your environment.")
+    task.wait(0.5)
+    while true do task.wait() end -- Safe hang
 end
-local Sn81otbF5OZL={102,196,224,178,182,31,28,59,246,108,10,35,246,103,39,148,148,83,144,228,13,186,225,121,212,218,111,150}
-for qCkB8Xe5uOs=1,#tC9dRhz1jnch do
-  tC9dRhz1jnch[qCkB8Xe5uOs]=bit32.bxor(tC9dRhz1jnch[qCkB8Xe5uOs],Sn81otbF5OZL[(qCkB8Xe5uOs-1)%#Sn81otbF5OZL+1])
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/refs/heads/main/lib"))()
+
+-- Inject Premium Card Component
+Library.Sections.Card = function(self, Data)
+    Data = Data or { }
+    local Name = Data.Name or "Script"
+    local ImageUrl = Data.Url or ""
+    local Status = Data.Status or "Online"
+    local Callback = Data.Callback or function() end
+    
+    local Items = { }
+    local function FromRGB(r, g, b) return Color3.fromRGB(r, g, b) end
+    
+    Items["Card"] = Instance.new("Frame")
+    Items["Card"].Parent = self.Items["Content"].Instance
+    Items["Card"].Size = UDim2.new(1, 0, 0, 140)
+    Items["Card"].BackgroundColor3 = FromRGB(18, 18, 18)
+    Items["Card"].BorderSizePixel = 0
+    Items["Card"].ZIndex = 5
+    
+    local Corner = Instance.new("UICorner", Items["Card"])
+    Corner.CornerRadius = UDim.new(0, 5)
+    
+    Items["Banner"] = Instance.new("ImageLabel", Items["Card"])
+    Items["Banner"].Size = UDim2.new(1, 0, 0, 75)
+    Items["Banner"].Image = ImageUrl
+    Items["Banner"].BackgroundTransparency = 1
+    Items["Banner"].ScaleType = Enum.ScaleType.Crop
+    Items["Banner"].ZIndex = 6
+    
+    local BannerCorner = Instance.new("UICorner", Items["Banner"])
+    BannerCorner.CornerRadius = UDim.new(0, 5)
+
+    Items["Title"] = Instance.new("TextLabel", Items["Card"])
+    Items["Title"].Text = Name
+    Items["Title"].Position = UDim2.new(0, 10, 0, 85)
+    Items["Title"].Size = UDim2.new(1, -20, 0, 20)
+    Items["Title"].TextColor3 = FromRGB(255, 255, 255)
+    Items["Title"].TextXAlignment = Enum.TextXAlignment.Left
+    Items["Title"].Font = Enum.Font.GothamBold
+    Items["Title"].TextSize = 15
+    Items["Title"].BackgroundTransparency = 1
+    Items["Title"].ZIndex = 6
+
+    Items["Status"] = Instance.new("TextLabel", Items["Card"])
+    Items["Status"].Text = "Status: " .. Status
+    Items["Status"].Position = UDim2.new(0, 10, 0, 105)
+    Items["Status"].Size = UDim2.new(1, -20, 0, 15)
+    Items["Status"].TextColor3 = Status == "Online" and FromRGB(0, 255, 0) or FromRGB(255, 50, 50)
+    Items["Status"].TextXAlignment = Enum.TextXAlignment.Left
+    Items["Status"].Font = Enum.Font.Gotham
+    Items["Status"].TextSize = 12
+    Items["Status"].BackgroundTransparency = 1
+    Items["Status"].ZIndex = 6
+
+    Items["Btn"] = Instance.new("TextButton", Items["Card"])
+    Items["Btn"].Text = "LOAD"
+    Items["Btn"].Position = UDim2.new(1, -70, 1, -35)
+    Items["Btn"].Size = UDim2.new(0, 60, 0, 25)
+    Items["Btn"].BackgroundColor3 = FromRGB(30, 30, 30)
+    Items["Btn"].TextColor3 = FromRGB(255, 255, 255)
+    Items["Btn"].BorderSizePixel = 0
+    Items["Btn"].Font = Enum.Font.GothamBold
+    Items["Btn"].TextSize = 12
+    Items["Btn"].ZIndex = 7
+    
+    local BtnCorner = Instance.new("UICorner", Items["Btn"])
+    BtnCorner.CornerRadius = UDim.new(0, 4)
+
+    Items["Btn"].MouseButton1Down:Connect(Callback)
+    
+    return Items
 end
-local YL6xK3Q2ZhNRN={}
-for qCkB8Xe5uOs=1,math.max(#Rd1kCsDbV1w,#tC9dRhz1jnch) do
-  if Rd1kCsDbV1w[qCkB8Xe5uOs] then YL6xK3Q2ZhNRN[#YL6xK3Q2ZhNRN+1]=Rd1kCsDbV1w[qCkB8Xe5uOs] end
-  if tC9dRhz1jnch[qCkB8Xe5uOs] then YL6xK3Q2ZhNRN[#YL6xK3Q2ZhNRN+1]=tC9dRhz1jnch[qCkB8Xe5uOs] end
+
+-- Asset Management
+if not isfolder("EpsteinWare") then makefolder("EpsteinWare") end
+if not isfolder("EpsteinWare/Assets") then makefolder("EpsteinWare/Assets") end
+
+local function SafeDownload(path, url)
+    local function download()
+        local success, result = pcall(function() return game:HttpGet(url) end)
+        if success and result and #result > 1000 and not result:sub(1, 10):find("<") then
+            writefile(path, result)
+            return true
+        end
+        return false
+    end
+
+    if isfile(path) then
+        local content = readfile(path)
+        if #content < 1000 or content:sub(1, 10):find("<") or content:sub(1, 10):find("{") then
+            delfile(path)
+            download()
+        end
+    else
+        download()
+    end
 end
-local I93OyMQIiLfu={}
-local Ojd3908wF4fBHM=768678241
-for qCkB8Xe5uOs=#YL6xK3Q2ZhNRN-1,1,-1 do
-  Ojd3908wF4fBHM=(Ojd3908wF4fBHM*1664525+1013904223)%4294967296
-  local aLspL6C6h1=Ojd3908wF4fBHM%(qCkB8Xe5uOs+1)+1
-  I93OyMQIiLfu[#I93OyMQIiLfu+1]={qCkB8Xe5uOs+1,aLspL6C6h1}
-end
-for qCkB8Xe5uOs=#I93OyMQIiLfu,1,-1 do
-  local kIqHMNcZtvc=I93OyMQIiLfu[qCkB8Xe5uOs]
-  local d4t1Fn86Z4gR=YL6xK3Q2ZhNRN[kIqHMNcZtvc[1]]
-  YL6xK3Q2ZhNRN[kIqHMNcZtvc[1]]=YL6xK3Q2ZhNRN[kIqHMNcZtvc[2]]
-  YL6xK3Q2ZhNRN[kIqHMNcZtvc[2]]=d4t1Fn86Z4gR
-end
-local vsxosn5iD={195,2,128,120,11,191,18,228,119,11,107,229,169,97,71,165,209,116,29,213,224,157,72,119,2,206,205,196}
-local nnoQuZJwHih={}
-for qCkB8Xe5uOs=1,#YL6xK3Q2ZhNRN do
-  nnoQuZJwHih[qCkB8Xe5uOs]=string.char(bit32.bxor(YL6xK3Q2ZhNRN[qCkB8Xe5uOs],vsxosn5iD[(qCkB8Xe5uOs-1)%#vsxosn5iD+1]))
-end
-local vQNs0RbX=table.concat(nnoQuZJwHih)
-local so6uFgGtGF,Dqbos9frMdjbA=loadstring(vQNs0RbX)
-if so6uFgGtGF then
-  so6uFgGtGF()
-else
-  error(" x01337 | Monsy | Public Enemy : "..tostring(Dqbos9frMdjbA))
-end
+
+local LogoFile = "EpsteinWare/Assets/Logo.png"
+local BackgroundFile = "EpsteinWare/Assets/Background.png"
+SafeDownload(LogoFile, "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/image-removebg-preview.png")
+SafeDownload(BackgroundFile, "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/6e3a7b36-14cb-4e48-afc3-7099bf472714.png")
+SafeDownload("EpsteinWare/Assets/VagrantBanner.png", "https://raw.githubusercontent.com/sigmaboi4167-code/VAGSCRIPT/main/VagrantBanner.png")
+
+-- Usage Logger
+task.spawn(function()
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+    local name = LocalPlayer.Name
+    local censoredName = #name > 5 and name:sub(1, 5) .. "..." or name
+    
+    local execCount = 1
+    local filePath = "EpsteinWare/Data.json"
+    pcall(function()
+        if isfile(filePath) then
+            local data = game:GetService("HttpService"):JSONDecode(readfile(filePath))
+            execCount = (data.Executions or 0) + 1
+        end
+        writefile(filePath, game:GetService("HttpService"):JSONEncode({Executions = execCount}))
+    end)
+
+    local payload = {
+        embeds = {{
+            title = "EpsteinWare Hub Execution",
+            color = 0x111111,
+            fields = {
+                { name = "User", value = censoredName, inline = true },
+                { name = "Executions", value = tostring(execCount), inline = true },
+                { name = "Game", value = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, inline = true },
+                { name = "Executor", value = (identifyexecutor and identifyexecutor() or "Unknown"), inline = true }
+            },
+            timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
+        }}
+    }
+
+    pcall(function()
+        local req = (request or http_request or syn.request or (http and http.request))
+        if req then
+            req({
+                Url = "https://discord.com/api/webhooks/1500680832359075902/Kxg35ByRjWdQzCgsY7OdvgoWgp3gZ7hqu-2HGhUyYwbUkbqK7VuC21CQIhp7EV02Aerk",
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"},
+                Body = game:GetService("HttpService"):JSONEncode(payload)
+            })
+        end
+    end)
+end)
+
+-- Create Window
+local Window = Library:Window({
+    Logo = LogoFile,
+    Background = BackgroundFile,
+    FadeSpeed = 0.2,
+    PagePadding = 19
+})
+
+local ProductsTab = Window:Page({ Name = "Products", Icon = "7059346386" })
+local InfoTab = Window:Page({ Name = "Information", Icon = "119606731229113" })
+
+local ProductsSubPage = ProductsTab:SubPage({ Name = "Scripts" })
+local InfoSubPage = InfoTab:SubPage({ Name = "Details" })
+
+task.wait(0.2)
+
+local InfoSection = InfoSubPage:Section({ Name = "Hub Info", Side = "Left" })
+InfoSection:Label("User: " .. game:GetService("Players").LocalPlayer.Name)
+InfoSection:Label("System Status: Protected")
+
+local ScriptsSection = ProductsSubPage:Section({ Name = "Script Marketplace", Side = "Left" })
+
+ScriptsSection:Card({
+    Name = "Vagrant Survival",
+    Url = getcustomasset("EpsteinWare/Assets/VagrantBanner.png"),
+    Status = "Online",
+    Callback = function()
+        Library:Notification("Establishing Connection", "Booting EpsteinWare framework...", 3)
+        loadstring(game:HttpGet(string.char(104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,115,105,103,109,97,98,111,105,52,49,54,55,45,99,111,100,101,47,86,65,71,83,67,82,73,80,84,47,114,101,102,115,47,104,101,97,100,115,47,109,97,105,110,47,108,111,97,100,101,114)))()
+        Library:Unload()
+    end
+})
+
+local MaintenanceSection = ProductsSubPage:Section({ Name = "Maintenance", Side = "Left" })
+
+MaintenanceSection:Button({
+    Name = "Trident Survival [OFFLINE]",
+    Callback = function() Library:Notification("Error", "Script is currently under maintenance.", 3) end
+})
+
+MaintenanceSection:Button({
+    Name = "Fallen Survival [OFFLINE]",
+    Callback = function() Library:Notification("Error", "Script is currently under maintenance.", 3) end
+})
+
+Library:Notification("System", "All services operational.", 3)
